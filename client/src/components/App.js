@@ -1,12 +1,15 @@
 import React from 'react';
-import Auth from './Auth';
+import SignUp from './SignUp';
+import Login from './Login';
 
 function App() {
   
 
   return (
     <>
-    <Auth />
+    <SignUp /> 
+    <Login />
+
     </>
   );
 }

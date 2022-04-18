@@ -1,16 +1,20 @@
 import React, { useState } from 'react';
 
-function Auth({setCurrentUser}) {
+function SignUp({setCurrentUser}) {
+    const [name, setName] = useState('');
+    const [email, setEmail] = useState('');
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
-    const [login, setLogin] = useState('');
+    
     const [errors, setErrors] = useState([])
 
     function onSubmit(e) {
         e.preventDefault()
         const user = {
             username, 
-            password
+            password,
+            name,
+            email
         }
         fetch(`/users`, {
             method: "POST",
@@ -28,10 +32,23 @@ function Auth({setCurrentUser}) {
     return(
         <form onSubmit={onSubmit}>
             <label>
+                Name: 
+                <br />
+                <input type="text" value={name} onChange={(e) => setName(e.target.value)} />
+            </label>
+            <br />
+            <label>
+                Email:
+                <br />
+                <input type="text" value={email} onChange={(e) => setEmail(e.target.value)} />
+            </label>
+            <br />
+            <label>
                 Username
                 <br />
                 <input type="text" value={username} onChange={(e) => setUsername(e.target.value)} />
             </label>
+            <br />
             <label>
                 Password
                 <br />
@@ -39,9 +56,9 @@ function Auth({setCurrentUser}) {
             </label>
             <br />
             <input type="submit" value="Sign up" />
-            <input type="submit" value="Login" onClick={() => setLogin(true)} />
+            {/* <input type="submit" value="Login" onClick={() => setLogin(true)} /> */}
             </form>
     )
 }
 
-export default Auth;
+export default SignUp;
