@@ -1,5 +1,4 @@
 import React from 'react';
-import SignUp from './SignUp';
 import Login from './Login';
 
 function App() {
@@ -7,8 +6,7 @@ function App() {
 
   return (
     <>
-    <SignUp /> 
-    <Login />
+  <Login />
 
     </>
   );
