@@ -4,6 +4,7 @@ import Login from './Login';
 import Home from './Home';
 import NavBar from './NavBar';
 import BecomeASavior from './BecomeASavior';
+import Cart from './Cart';
 
 
 // import LoginForm from './LoginForm';
@@ -33,9 +34,10 @@ function App() {
   
  <Router>
  <NavBar />
+ <Cart />
     <Switch>
       
-      <Route path="/">
+      <Route path="/home">
         <Home />
       </Route>
       <Route path="/become-a-savior">

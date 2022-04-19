@@ -4,14 +4,14 @@ function BecomeASavior(){
     return(
         <div>
             <h3>Flavor Savior</h3>
-            <img src='' alt='deliveryimg'>
+            <img src='' alt='deliveryimg' />
                 <h3>Your time. Your goals. You're the boss.</h3>
                 <h3>Drive, deliver, and earn with FlavorSavior.</h3>
                 <p>
                     Start and stop when you want
                     <input type='email' id="email" pattern=".+@gmail\.com" size="30" required placeholder="email"></input>
                 </p>
-            </img>
+            
             <h2>What is FlavorSavior</h2>
             <p>
                 Available in over 10,000 cities in the U.S., Canada, and Antarctica, FlavorSavior is about connecting
@@ -66,7 +66,7 @@ function BecomeASavior(){
                 before accepting any order. 
             </p>
             {/* final portion of page light pink bg */}
-            <p>
+         
                 <h2><strong>Sign up details</strong></h2>
                 <h4>Requirements</h4>
                 <ul>
@@ -82,7 +82,7 @@ function BecomeASavior(){
                     <li>Complete sign up</li>
                     <li>Get the app and go</li>
                 </ul>
-            </p>
+            
         </div>
     )
 }
