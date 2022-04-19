@@ -6,10 +6,10 @@ function SearchBar() {
     function handleSearchChange(e) {
         setSearch(e.target.value);
     }
-    
+
     return(
         <div>
-            <input type="search" placeholder="Search" clssName="search" onChange={handleSearchChange} value={search} />
+            <input type="search" placeholder="Search" className="search" onChange={handleSearchChange} value={search} />
         </div>
     )
 }

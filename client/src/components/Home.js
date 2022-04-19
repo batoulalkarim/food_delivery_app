@@ -1,23 +1,28 @@
 import React from 'react';
 import SearchBar from './SearchBar';
-import Link from 'react-router-dom';
+
+// import{ Link }from 'react-router-dom';
+// import BecomeASavior from './BecomeASavior';
 
 function Home() {
     return(
         <div className="home_wrapper">
             <div className ="home_firstthird">
-                <img src="" alt="bgimg">
+                <img src="" alt="bgimg" />
                 <h1>Flavor Savior</h1>
                 <SearchBar />
-                </img>
+                
                 <h3>Become a Savior</h3>
                 {/* insert image of someone on a scooter */}
                 <p>
                     As a Savior, you'll be <br />
                     making reliable money- working<br />
                     anytime, anywhere.
-                </p>             
-                <Link to="/becomeasavior">Start Earning</Link>
+                </p>   
+    
+                        {/* <Route path="/becomeasavior">Start Earning</Route> */}
+         
+                {/* <Link href="/becomeasavior" >Start Earning</Link> */}
             </div>
             <div className="home_secondthird">
                 {/* flex box this so theyre side by side */}
@@ -25,7 +30,7 @@ function Home() {
                 <h2><strong>It'll be here. <br /> All in one app.</strong></h2>
                 <p>
                     Coming soon, you'll be able to order right from your phone, <br />
-                    dicover local, on-demand delivery or Pickup from Restaurants, <br />
+                    discover local, on-demand delivery or Pickup from Restaurants, <br />
                     nearby grocery and convenience stores, and more.
                 </p>
             </div>
