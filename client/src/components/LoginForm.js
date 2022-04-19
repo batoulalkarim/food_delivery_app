@@ -33,6 +33,8 @@ function LoginForm({setCurrentUser}){
     }
 
     return(
+        <div>
+            <h1>Welcome Back</h1>
         <form onSubmit={onSubmit}>
         <label>
         Username
@@ -48,6 +50,7 @@ function LoginForm({setCurrentUser}){
     <br />
     <input type="submit" value="Login" onClick={() => setLogin(true)} />
     </form>
+    </div>
     )
 }
 
