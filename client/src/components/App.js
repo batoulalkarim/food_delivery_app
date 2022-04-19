@@ -4,6 +4,7 @@ import Login from './Login';
 import Home from './Home';
 import NavBar from './NavBar';
 import BecomeASavior from './BecomeASavior';
+import RestaurantPage from './RestaurantPage'
 import Cart from './Cart';
 
 
@@ -18,7 +19,6 @@ function App() {
     .then(res => {
       if(res.ok){
         res.json().then(user => setCurrentUser(user))
-        // navigate('/')
       } 
     })
   }, [])
@@ -33,7 +33,7 @@ function App() {
 
   
  <Router>
- <NavBar />
+ <NavBar setCurrentUser={setCurrentUser} />
  <Cart />
     <Switch>
       
@@ -42,6 +42,9 @@ function App() {
       </Route>
       <Route path="/become-a-savior">
         <BecomeASavior />
+      </Route>
+      <Route path="/restaurants">
+        <RestaurantPage />
       </Route>
     </Switch>
     </Router>

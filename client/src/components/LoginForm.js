@@ -39,7 +39,7 @@ function LoginForm({setCurrentUser}){
     return(
         <div>
             <h1>Welcome Back</h1>
-            <h2>{typeof(setCurrentUser)}</h2>
+            {/* <h2>{typeof(setCurrentUser)}</h2> */}
         <form onSubmit={onSubmit}>
         <label>
         Username

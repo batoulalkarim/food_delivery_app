@@ -1,17 +1,27 @@
-import React from "react"
-import ResCard from "/Card.js"
+import React, {useState, useEffect} from "react"
 
-const ResPage = ({resPage, view}) => {
+const RestaurantPage = ({resPage, view}) => {
+    const [restrs, setRestrs] = useState([])
 
-    const Restaurants = resCollection.map((restaurant,index) => {
-        return <div className ="ui column"><ResCard key={index} restaurants={restaurants} view={view} /></div>
-    });
+    useEffect(() => {
+        fetch('http://localhost:3000/restaurants')
+        .then(res => res.json())
+        .then(data => {
+            setRestrs(data)
+        }) 
+    }, [])
     
-    return (
-    <div className="ui four column grid">
-        <div className='row'>
-            {restaurants}
+    return(
+        <div>
+            {restrs.map(r => {
+                return(
+                    <div>
+                        <h1>{r.name}</h1>
+                    </div>
+                )
+            })}
         </div>
-    </div>
     )
   };
+
+  export default RestaurantPage;
