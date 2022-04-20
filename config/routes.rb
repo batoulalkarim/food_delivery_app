@@ -4,7 +4,9 @@ Rails.application.routes.draw do
   # Leave this here to help deploy your app later!
 
   resources :users, only: [:show, :create]
-  resources :restaurants, only: [:show, :index]
+  resources :restaurants, only: [:show, :index] do
+    resources :items, only: [:show, :index]
+  end
   resources :items, only: [:show, :index]
   # resources :orders 
 
