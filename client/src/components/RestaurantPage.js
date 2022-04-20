@@ -20,30 +20,15 @@ const RestaurantPage = () => {
     })
     return(
         <div>
-<<<<<<< HEAD
-            {restrs.map(r => {
-                return(
-                    <div>
-                        <h1>{r.name}</h1>
-                    </div>
-                )
-            })}
-=======
+
 
             <h1>Restaurants</h1>
             {cards}
 
->>>>>>> 74114e83b72adb16eaf9c5101c860162dc917053
+
         </div>
-        // <div>
-        //     {restrs.map(r => {
-        //         return(
-        //             <div>
-        //                 <h1>{r.name}</h1>
-        //             </div>
-        //         )
-        //     })}
-        // </div>
+  
+ 
     )
   };
 
