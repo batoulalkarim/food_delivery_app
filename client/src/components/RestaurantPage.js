@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from "react"
+import ResCard from "./Card";
 
-const RestaurantPage = ({resPage, view}) => {
+const RestaurantPage = () => {
     const [restrs, setRestrs] = useState([])
 
     useEffect(() => {
@@ -11,16 +12,24 @@ const RestaurantPage = ({resPage, view}) => {
         }) 
     }, [])
     
+
+    const cards = restrs.map((restaurant) => {
+        return(<ResCard key={restaurant.id} restaurant={restaurant} />)
+    })
     return(
         <div>
-            {restrs.map(r => {
-                return(
-                    <div>
-                        <h1>{r.name}</h1>
-                    </div>
-                )
-            })}
+            <h1>Restaurants</h1>
+            {cards}
         </div>
+        // <div>
+        //     {restrs.map(r => {
+        //         return(
+        //             <div>
+        //                 <h1>{r.name}</h1>
+        //             </div>
+        //         )
+        //     })}
+        // </div>
     )
   };
 

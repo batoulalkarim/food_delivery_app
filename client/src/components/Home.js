@@ -5,10 +5,11 @@ import SearchBar from './SearchBar';
 // import BecomeASavior from './BecomeASavior';
 
 function Home() {
+
     return(
         <div className="home_wrapper">
             <div className ="home_firstthird">
-                <img src="" alt="bgimg" />
+               <div className="home_firstthird_text">
                 <h1>Flavor Savior</h1>
                 <SearchBar />
                 
@@ -23,6 +24,7 @@ function Home() {
                         {/* <Route path="/becomeasavior">Start Earning</Route> */}
          
                 {/* <Link href="/becomeasavior" >Start Earning</Link> */}
+                </div>
             </div>
             <div className="home_secondthird">
                 {/* flex box this so theyre side by side */}
