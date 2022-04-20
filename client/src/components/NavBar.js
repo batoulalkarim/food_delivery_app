@@ -15,11 +15,6 @@ function NavBar({ setCurrentUser }) {
     return(
        <nav className="navbar">
            <ul className="navul">
-                {/* <li className="navli">Flavor Savior</li>
-                <li className="navli"><a href="/home">Home</a></li>
-                <li className="navli"><a href="/restaurants">Restaurants</a></li>
-                <li className="navli"><a href="/become-a-savior">Become a Savior</a></li> */}
-            
            <Link to="/home" className="navli">Home</Link>
            {/* past orders needs to only exist for current users */}
            <Link to="/past-orders" className="navli">Past Orders</Link>
