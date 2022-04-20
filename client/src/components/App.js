@@ -5,7 +5,7 @@ import Home from './Home';
 import NavBar from './NavBar';
 import BecomeASavior from './BecomeASavior';
 import RestaurantPage from './RestaurantPage'
-import Cart from './Cart';
+
 
 
 // import LoginForm from './LoginForm';
@@ -34,10 +34,10 @@ function App() {
   
  <Router>
  <NavBar setCurrentUser={setCurrentUser} />
- <Cart />
+
     <Switch>
       
-      <Route path="/home">
+      <Route path="/">
         <Home />
       </Route>
       <Route path="/become-a-savior">

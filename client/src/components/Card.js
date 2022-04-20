@@ -1,8 +1,8 @@
 import React from 'react'
 
-function ResCard(){
+function ResCard({restaurant, showView}){
     return(
-        <div className ="ui card" key={restaurant.id} onClick={showView}>
+        <div className ="card" key={restaurant.id} onClick={showView}>
             <div className="image">
                 <img alt="oops" src={restaurant.image_url}/>
             </div>
@@ -10,12 +10,11 @@ function ResCard(){
                 <div className="header">
                 {restaurant.name}
                 </div>
+            </div>
+        </div>
 
     )
 
-
-
 }
+export default ResCard;
 
-
-export default ResCard
