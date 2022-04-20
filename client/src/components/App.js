@@ -36,8 +36,7 @@ function App() {
  <NavBar setCurrentUser={setCurrentUser} />
 
     <Switch>
-      
-      <Route exact path="/become-a-savior">
+    <Route exact path="/become-a-savior">
         <BecomeASavior />
       </Route>
       <Route path="/restaurants">
