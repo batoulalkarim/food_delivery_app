@@ -37,14 +37,14 @@ function App() {
 
     <Switch>
       
-      <Route path="/">
-        <Home />
-      </Route>
-      <Route path="/become-a-savior">
+      <Route exact path="/become-a-savior">
         <BecomeASavior />
       </Route>
       <Route path="/restaurants">
         <RestaurantPage />
+      </Route>
+      <Route path="/">
+        <Home />
       </Route>
     </Switch>
     </Router>

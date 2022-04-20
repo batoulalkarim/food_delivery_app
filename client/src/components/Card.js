@@ -1,6 +1,7 @@
 import React from 'react'
 
 function ResCard({restaurant, showView}){
+    
     return(
         <div className ="card" key={restaurant.id} onClick={showView}>
             <div className="image">
