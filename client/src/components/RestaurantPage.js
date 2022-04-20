@@ -4,13 +4,15 @@ import ResCard from "./Card";
 const RestaurantPage = () => {
     const [restrs, setRestrs] = useState([])
 
-    // useEffect(() => {
-    //     fetch('http://localhost:3000/restaurants')
-    //     .then(res => res.json())
-    //     .then(data => {
-    //         setRestrs(data)
-    //     }) 
-    // }, [])
+    useEffect(() => {
+        fetch('http://localhost:3000/restaurants')
+        .then(res => res.json())
+        .then(data => {
+            console.log(data)
+            setRestrs(data)
+
+        }) 
+    }, [])
     
 
     const cards = restrs.map((restaurant) => {
@@ -18,10 +20,20 @@ const RestaurantPage = () => {
     })
     return(
         <div>
+<<<<<<< HEAD
+            {restrs.map(r => {
+                return(
+                    <div>
+                        <h1>{r.name}</h1>
+                    </div>
+                )
+            })}
+=======
 
             <h1>Restaurants</h1>
             {cards}
 
+>>>>>>> 74114e83b72adb16eaf9c5101c860162dc917053
         </div>
         // <div>
         //     {restrs.map(r => {
