@@ -42,7 +42,7 @@ function App() {
       <Route path="/restaurants">
         <RestaurantPage />
       </Route>
-      <Route path="/restaurantdetails">
+      <Route path="/restaurantdetails/:restaurant_id">
         <RestaurantDetails />
       </Route>
       <Route path="/">

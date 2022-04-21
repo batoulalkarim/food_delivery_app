@@ -20,7 +20,7 @@ Rails.application.routes.draw do
   post "/users", to: "users#create"
   get "/auth", to: "users#show"
   
-  get "/restaurants/:restaurant_id/items", to: "restaurants#items_index"
-  get '/restaurants/:restaurant_id/items/:id', to: "items#show"
+  get "/restaurants/:id", to: "restaurants#show"
+  # get '/restaurants/:restaurant_id/items/:id', to: "items#show"
   get "*path", to: "fallback#index", constraints: ->(req) { !req.xhr? && req.format.html? }
 end

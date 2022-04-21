@@ -1,16 +1,21 @@
 import React, {useEffect, useState} from 'react';
 import ItemCard from './ItemCard';
+import {useParams} from 'react-router-dom'
 
 
 
-function RestaurantDetails({restaurant}){
+function RestaurantDetails(){
+    let {restaurant_id} = useParams()
+    console.log(restaurant_id)
+    const [restrs, setRestrs] = useState([])
     const [items, setItems] = useState([])
-    console.log(items)
+    console.log(restrs)
     
     useEffect(() => {
-        fetch(`http://localhost:3000/restaurants/?id=${restaurant.id}`)
+        fetch(`http://localhost:3000/restaurants/${restaurant_id}`)
         .then(res => res.json())
         .then(data => {
+            setRestrs(data)
             setItems(data)
             console.log(data)
         })
@@ -21,8 +26,8 @@ function RestaurantDetails({restaurant}){
     //    return(item.restaurant.id === restaurant.id)
     // })
     
-    const displayItems = items.map((item) => {
-        return <ItemCard key={items.indexOf(item)} item={item}/>
+    const displayItems = restrs.items.map((rest, item) => {
+        return <ItemCard key={rest.item.id} rest={rest} item={item}/>
     })
         return(
         <div>
