@@ -6,7 +6,7 @@ before_action :authorized
 
 def authorized
     # puts session.inspect
-    # return render json: {error: "Not Authorized"}, status: :unauthorized unless session.include? :user_id 
+    return render json: {error: "Not Authorized"}, status: :unauthorized unless session.include? :user_id 
 
 end 
   

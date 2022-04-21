@@ -5,7 +5,9 @@ Rails.application.routes.draw do
 
   # resources :users, only: [:show, :create]
   # resources :restaurants
-  resources :items, only: [:show, :index]
+  resources :items, only: [:show, :index] do 
+    resources :restaurants, only: [:show, :index]
+  end
   resources :restaurants, only: [:show, :index] do
     resources :items, only: [:show, :index]
   end
@@ -13,11 +15,12 @@ Rails.application.routes.draw do
   # resources :orders 
 
 
-
-  post "/login", to: "sessions#create"
-  get "/auth", to: "users#show"
   delete "/logout", to: "sessions#destroy"
+  post "/login", to: "sessions#show"
+  post "/users", to: "users#create"
+  get "/auth", to: "users#show"
   
-
+  get "/restaurants/:restaurant_id/items", to: "restaurants#items_index"
+  get '/restaurants/:restaurant_id/items/:id', to: "items#show"
   get "*path", to: "fallback#index", constraints: ->(req) { !req.xhr? && req.format.html? }
 end

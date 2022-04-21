@@ -7,13 +7,13 @@ function Login({ setCurrentUser }){
 
 
     return(
-        <div>
-            <h1>Flavor Savior</h1>
+        <div className="loginbg">
+            <h1 className="logintitlefs">Flavor Savior</h1>
             {showLogin ? (
                 <>
                 <LoginForm setCurrentUser={setCurrentUser}/>
                 <br />
-                <p>
+                <p className="logintoggle">
                     Don't have an account? &nbsp;
                     <button onClick={() => setShowLogin(false)}>
                         Sign Up 
@@ -24,7 +24,7 @@ function Login({ setCurrentUser }){
                 <>
                 <SignUp setCurrentUser={setCurrentUser}/>
                 <br />
-                <p>
+                <p className="logintoggle">
                     Already have an account? &nbsp;
                     <button onClick={() => setShowLogin(true)}>
                         Log In

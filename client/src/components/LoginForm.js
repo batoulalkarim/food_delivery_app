@@ -38,9 +38,9 @@ function LoginForm({setCurrentUser}){
 
     return(
         <div>
-            <h1>Welcome Back</h1>
+            <h1 className="logintitle">Welcome Back</h1>
             {/* <h2>{typeof(setCurrentUser)}</h2> */}
-        <form onSubmit={onSubmit}>
+        <form onSubmit={onSubmit} className="loginform">
         <label>
         Username
         <br />

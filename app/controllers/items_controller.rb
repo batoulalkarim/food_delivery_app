@@ -5,7 +5,7 @@ class ItemsController < ApplicationController
 
     def index 
         if params[:restaurant_id]
-            restaurant = Restaurant.find(params[:restaurant_id])
+            restaurant = Restaurant.where(id: [:restaurant_id])
             items = restaurant.items
         else
             items = Item.all

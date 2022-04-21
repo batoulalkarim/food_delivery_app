@@ -20,9 +20,15 @@ function RestaurantPage() {
     })
 
     return(
-        <div>
-            <h1>Restaurants</h1>
+        <div className="restaurantpageContainer">
+            <h1 className="title">Flavor Savior</h1>
+            <div className="resheader">
+            <h1>Crave it? Get it.</h1>
+            <p className="restext">Search for your favorite restaurant, cuisine, or dish.</p>
+            </div>
+            <div className="cardcont">
             {cards}
+            </div>
         </div>
         
 

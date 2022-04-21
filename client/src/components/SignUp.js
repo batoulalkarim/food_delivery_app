@@ -30,30 +30,36 @@ function SignUp({setCurrentUser}) {
         })
     }
     return(
-        <form onSubmit={onSubmit}>
+        <form onSubmit={onSubmit} className="signupform">
             <label>
-                Name: 
+               Full Name: 
                 <br />
                 <input type="text" value={name} onChange={(e) => setName(e.target.value)} />
             </label>
             <br />
+            <br />
             <label>
-                Email:
+                Your Spam Email:
                 <br />
                 <input type="text" value={email} onChange={(e) => setEmail(e.target.value)} />
             </label>
             <br />
+            <br />
             <label>
-                Username
+                Username:
+             
                 <br />
                 <input type="text" value={username} onChange={(e) => setUsername(e.target.value)} />
             </label>
             <br />
             <label>
-                Password
+            <br />
+                Password:
+                
                 <br />
                 <input type="text" value={password} onChange={(e) => setPassword(e.target.value)} />
             </label>
+            <br />
             <br />
             <input type="submit" value="Sign up" />
             {/* <input type="submit" value="Login" onClick={() => setLogin(true)} /> */}

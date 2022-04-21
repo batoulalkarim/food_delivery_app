@@ -3,16 +3,12 @@ import React from 'react';
 function ItemCard({item}){
     
     return(
-        <div className="itemcard_container" >
+        <div className="itemcard_container" key={item.id} >
             <div className="itemcard">
-                <h5>item name</h5>
-                <h4>$ item price</h4>
-
-                {/* <h1>{restaurant.item.name}</h1>
-                <h4>{restaurant.item.price}</h4> */}
-                {/* <ul>
-                    <li>item names and prices in here</li>
-                </ul> */}
+                <h3>{item.name}</h3>
+                <h4>$ {item.price}</h4>
+                <h4>item id: {item.id}</h4>
+                <button>Add to Cart</button>
             </div>
         </div>
     )
