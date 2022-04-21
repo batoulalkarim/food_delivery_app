@@ -5,7 +5,7 @@ import Home from './Home';
 import NavBar from './NavBar';
 import BecomeASavior from './BecomeASavior';
 import RestaurantPage from './RestaurantPage'
-
+import RestaurantDetails from './RestaurantDetails';
 
 
 // import LoginForm from './LoginForm';
@@ -41,6 +41,9 @@ function App() {
       </Route>
       <Route path="/restaurants">
         <RestaurantPage />
+      </Route>
+      <Route path="/restaurantdetails">
+        <RestaurantDetails />
       </Route>
       <Route path="/">
         <Home />

@@ -22,13 +22,13 @@ function NavBar({ setCurrentUser }) {
            <Link to="/past-orders" className="navli">Past Orders</Link>
            <Link to="/restaurants" className="navli">Restaurants</Link>
            <Link to="/become-a-savior" className="navli">Become a Savior</Link> 
-           <Cart />
+           {/* <Cart /> */}
            <button className="logout" onClick={handleLogoutClick}>Logout</button>
            </p>
         </nav>
       <div className="home_left"> 
-         {/* <Cart />
-         <button className="logout" onClick={handleLogoutClick}>Logout</button> */}
+          <Cart />
+         {/*<button className="logout" onClick={handleLogoutClick}>Logout</button> */}
       </div> 
     </div>
     )

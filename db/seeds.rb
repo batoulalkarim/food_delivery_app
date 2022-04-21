@@ -1,17 +1,6 @@
-Restaurant.destroy_all
 Item.destroy_all
+Restaurant.destroy_all
 
-puts "🏕 Seeding restaurants..."
-r1 = Restaurant.create(name: 'Calexico', image_url:'/calexico.jpg')
-r2 = Restaurant.create(name: 'Chic-Fil-A', image_url:'/chic.png')
-r3 = Restaurant.create(name: 'Chipotle', image_url:'/chipotle.svg.png')
-r4 = Restaurant.create(name: 'Chopt', image_url:'/chopt.jpg')
-r5 = Restaurant.create(name: 'Dig', image_url:'/dig.webp')
-r6 = Restaurant.create(name: 'Mcdonalds', image_url:'/mcdonald.jpg')
-r7 = Restaurant.create(name: 'Naya Express', image_url:'naya.png')
-r8 = Restaurant.create(name: 'Poke Bowl', image_url:'/poke.jpg')
-r9 = Restaurant.create(name: 'Sweetgreen', image_url:'/sweetgreen.png')
-r10 = Restaurant.create(name: 'Wendys', image_url:'/wnedy.svg.png')
 
 
 puts "🏕 Seeding items..."
@@ -84,3 +73,14 @@ i65= Item.create(name: 'Spicy Chicken Sandwich Combo', price:8.59, restaurant_id
 i65= Item.create(name: 'Frosty', price:3.99, restaurant_id:10)
 
 
+puts "🏕 Seeding restaurants..."
+r1 = Restaurant.create(image_url:'/calexico.jpg', name: 'Calexico', distance: 35, delivery_fee: 4.50, items: [i1, i2, i3, i4, i5, i6, i7, i8, i9, i10, i11])
+r2 = Restaurant.create(image_url:'/chic.png', name: 'Chic-Fil-A', distance: 20, delivery_fee: 2.00, items: [i12, i13, i14, i15, i16, i17, i18, i19, i20, i21, i22])
+r3 = Restaurant.create(image_url:'/chipotle.svg.png', name: 'Chipotle', distance: 30, delivery_fee: 2.50, items: [i23, i23, i25, i26, i27])
+r4 = Restaurant.create(image_url:'/chopt.jpg', name: 'Chopt', distance: 15, delivery_fee: 5.00, items: [i33, i34, i35, i36, i37, i38, i39])
+r5 = Restaurant.create(image_url:'/dig.webp', name: 'Dig', distance: 45, delivery_fee: 3.00, items: [i44, i45, i46, i47, i48, i49])
+r6 = Restaurant.create(image_url:'/mcdonald.jpg', name: 'Mcdonalds', distance: 15, delivery_fee: 3.50, items: [i50, i51, i52, i53, i54])
+r7 = Restaurant.create(image_url:'naya.png', name: 'Naya Express',  distance: 25, delivery_fee: 4.00, items: [i55, i56, i57, i58, i59, i60])
+r8 = Restaurant.create(image_url:'/poke.jpg', name: 'Poke Bowl', distance: 20, delivery_fee: 2.00, items: [i40, i41, i42, i43])
+r9 = Restaurant.create(image_url:'/sweetgreen.png', name: 'Sweetgreen', distance: 30, delivery_fee: 3.50, items: [i61, i62, i63, i64, i65])
+r10 = Restaurant.create( image_url:'/wendy.svg.png',name: 'Wendys', distance: 15, delivery_fee: 8.50, items: [i28, i29, i30, i31, i32])

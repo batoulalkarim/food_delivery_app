@@ -1,15 +1,16 @@
 class RestaurantsController < ApplicationController
+
+
     def index
-        return render json: Restaurant.all, status: 200
+        restaurants = Restaurant.all
+        return render json: restaurants, include: 
+             [:items => {:only => [:id, :name, :price, :restaurant_id]}], status: 200
     end
    
+    
         def show 
             restaurant = Restaurant.find_by(id: params[:id])
-            if restaurant
-                return render json: restaurant
-            else
-                return render json:{ error: "Not Found"}, status: :not_found
-            end 
+            return render json: restaurant, include: :items
         end 
     
 end

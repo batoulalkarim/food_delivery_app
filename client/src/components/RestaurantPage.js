@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from "react"
 import ResCard from "./Card";
 
-const RestaurantPage = () => {
+function RestaurantPage() {
     const [restrs, setRestrs] = useState([])
 
     useEffect(() => {
@@ -13,14 +13,14 @@ const RestaurantPage = () => {
 
         }) 
     }, [])
-    
 
+    
     const cards = restrs.map((restaurant) => {
         return(<ResCard key={restaurant.id} restaurant={restaurant} />)
     })
+
     return(
         <div>
-
             <h1>Restaurants</h1>
             {cards}
         </div>

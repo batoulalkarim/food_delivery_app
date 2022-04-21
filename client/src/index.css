@@ -64,8 +64,8 @@ html, body{
 }
 
 img {
-    height: 100px;
-    width: 100px;
+    height: 110px;
+    width: 120px;
   }
 
 .card {
@@ -77,8 +77,8 @@ img {
     margin: 30px;
     float: left;
     text-align: center;
-    width: 100px;
-    height: 275px;
+    width: 150px;
+    height: 250px;
   }
 
 .home_firstthird_text {
