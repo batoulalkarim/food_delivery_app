@@ -1,6 +1,7 @@
 import React from "react";
 import {Link} from 'react-router-dom';
-import Cart from "./Cart";
+
+import {BsFillCartCheckFill} from 'react-icons/bs'
 
 function NavBar({ setCurrentUser }) {
 
@@ -27,7 +28,7 @@ function NavBar({ setCurrentUser }) {
            </p>
         </nav>
       <div className="home_left"> 
-          <Cart />
+         <Link to="/cart" className="cart"><BsFillCartCheckFill size="20px" /></Link>
          {/*<button className="logout" onClick={handleLogoutClick}>Logout</button> */}
       </div> 
     </div>

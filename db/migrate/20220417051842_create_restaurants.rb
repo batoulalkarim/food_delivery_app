@@ -6,6 +6,7 @@ class CreateRestaurants < ActiveRecord::Migration[6.1]
       t.float :delivery_fee
       t.string :name
       t.references :items 
+      t.references :reviews
       
       t.timestamps
     end

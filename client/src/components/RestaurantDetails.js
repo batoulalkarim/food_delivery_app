@@ -1,41 +1,41 @@
 import React, {useEffect, useState} from 'react';
-import ItemCard from './ItemCard';
 import {useParams} from 'react-router-dom'
+import {Link} from 'react-router-dom';
+
 
 
 
 function RestaurantDetails(){
     let {restaurant_id} = useParams()
     console.log(restaurant_id)
-    const [restrs, setRestrs] = useState([])
-    const [items, setItems] = useState([])
-    console.log(restrs)
-    
+    const [restrs, setRestrs] = useState(null)
+ 
     useEffect(() => {
         fetch(`http://localhost:3000/restaurants/${restaurant_id}`)
         .then(res => res.json())
         .then(data => {
-            setRestrs(data)
-            setItems(data)
             console.log(data)
+            setRestrs(data)
         })
-        .catch(err => console.log(err))
     }, [])
 
-    // const displayItems = items.filter(item => {
-    //    return(item.restaurant.id === restaurant.id)
-    // })
+
+    const display = restrs ? 
+    restrs.items.map((item) => {
+          return(
+        <div className="itemcard" key={item.name} restrs={restrs}>
+        <h3>item name:{item.name}</h3>
+        <h4>$ {item.price}</h4>
+        <h4>item id: {item.id}</h4>
+        <Link to="/cart">Add to cart</Link>
+    </div>
+    )
+    }) : null 
     
-    const displayItems = restrs.items.map((rest, item) => {
-        return <ItemCard key={rest.item.id} rest={rest} item={item}/>
-    })
         return(
         <div>
              <h1>Menu</h1>
-            {displayItems}
-           
-           {/* <ItemCard restaurant={restaurant}/> */}
-          
+             {display}
         </div>
     )
 };

@@ -3,6 +3,8 @@ class ItemsController < ApplicationController
     #     return render json: Item.where(restaurant_id:[params[:restaurant_id]]), status: 200
     # end
 
+    skip_before_action :authorized, only: [:index, :show]
+    
     def index 
         if params[:restaurant_id]
             restaurant = Restaurant.where(id: [:restaurant_id])

@@ -11,6 +11,10 @@ Rails.application.routes.draw do
   resources :restaurants, only: [:show, :index] do
     resources :items, only: [:show, :index]
   end
+
+  resources :restaurants, only: [:show, :index] do
+    resources :reviews, only: [:show, :index]
+  end
   
   # resources :orders 
 

@@ -1,6 +1,19 @@
 Item.destroy_all
 Restaurant.destroy_all
+Review.destroy_all 
 
+puts "seeding reviews"
+
+rev1 = Review.create(review:"its good", restaurant_id: 1)
+rev2 = Review.create(review:"its ok", restaurant_id: 2)
+rev3 = Review.create(review:"its bad", restaurant_id: 3)
+rev4 = Review.create(review:"its alright", restaurant_id: 4)
+rev5 = Review.create(review:"its the best", restaurant_id: 5)
+rev6 = Review.create(review:"its bomb", restaurant_id: 6)
+rev7 = Review.create(review:"nice food", restaurant_id: 7)
+rev8 = Review.create(review:"everythings great", restaurant_id: 8)
+rev9 = Review.create(review:"bombdiggity", restaurant_id: 9)
+rev10 = Review.create(review:"yum yum in my tum tum", restaurant_id: 10)
 
 
 puts "🏕 Seeding items..."
@@ -74,13 +87,15 @@ i65= Item.create(name: 'Frosty', price:3.99, restaurant_id:10)
 
 
 puts "🏕 Seeding restaurants..."
-r1 = Restaurant.create(image_url:'/calexico.jpg', name: 'Calexico', distance: 35, delivery_fee: 4.50, items: [i1, i2, i3, i4, i5, i6, i7, i8, i9, i10, i11])
-r2 = Restaurant.create(image_url:'/chic.png', name: 'Chic-Fil-A', distance: 20, delivery_fee: 2.00, items: [i12, i13, i14, i15, i16, i17, i18, i19, i20, i21, i22])
-r3 = Restaurant.create(image_url:'/chipotle.svg.png', name: 'Chipotle', distance: 30, delivery_fee: 2.50, items: [i23, i23, i25, i26, i27])
-r4 = Restaurant.create(image_url:'/chopt.jpg', name: 'Chopt', distance: 15, delivery_fee: 5.00, items: [i33, i34, i35, i36, i37, i38, i39])
-r5 = Restaurant.create(image_url:'/dig.webp', name: 'Dig', distance: 45, delivery_fee: 3.00, items: [i44, i45, i46, i47, i48, i49])
-r6 = Restaurant.create(image_url:'/mcdonald.jpg', name: 'Mcdonalds', distance: 15, delivery_fee: 3.50, items: [i50, i51, i52, i53, i54])
-r7 = Restaurant.create(image_url:'naya.png', name: 'Naya Express',  distance: 25, delivery_fee: 4.00, items: [i55, i56, i57, i58, i59, i60])
-r8 = Restaurant.create(image_url:'/poke.jpg', name: 'Poke Bowl', distance: 20, delivery_fee: 2.00, items: [i40, i41, i42, i43])
-r9 = Restaurant.create(image_url:'/sweetgreen.png', name: 'Sweetgreen', distance: 30, delivery_fee: 3.50, items: [i61, i62, i63, i64, i65])
-r10 = Restaurant.create( image_url:'/wendy.svg.png',name: 'Wendys', distance: 15, delivery_fee: 8.50, items: [i28, i29, i30, i31, i32])
+r1 = Restaurant.create(image_url:'/calexico.jpg', name: 'Calexico', distance: 35, delivery_fee: 4.50, items: [i1, i2, i3, i4, i5, i6, i7, i8, i9, i10, i11], reviews: [rev1])
+r2 = Restaurant.create(image_url:'/chic.png', name: 'Chic-Fil-A', distance: 20, delivery_fee: 2.00, items: [i12, i13, i14, i15, i16, i17, i18, i19, i20, i21, i22], reviews: [rev2])
+r3 = Restaurant.create(image_url:'/chipotle.svg.png', name: 'Chipotle', distance: 30, delivery_fee: 2.50, items: [i23, i23, i25, i26, i27], reviews: [rev3])
+r4 = Restaurant.create(image_url:'/chopt.jpg', name: 'Chopt', distance: 15, delivery_fee: 5.00, items: [i33, i34, i35, i36, i37, i38, i39], reviews: [rev4])
+r5 = Restaurant.create(image_url:'/dig.webp', name: 'Dig', distance: 45, delivery_fee: 3.00, items: [i44, i45, i46, i47, i48, i49], reviews: [rev5])
+r6 = Restaurant.create(image_url:'/mcdonald.jpg', name: 'Mcdonalds', distance: 15, delivery_fee: 3.50, items: [i50, i51, i52, i53, i54], reviews: [rev6])
+r7 = Restaurant.create(image_url:'naya.png', name: 'Naya Express',  distance: 25, delivery_fee: 4.00, items: [i55, i56, i57, i58, i59, i60], reviews: [rev7])
+r8 = Restaurant.create(image_url:'/poke.jpg', name: 'Poke Bowl', distance: 20, delivery_fee: 2.00, items: [i40, i41, i42, i43], reviews: [rev8])
+r9 = Restaurant.create(image_url:'/sweetgreen.png', name: 'Sweetgreen', distance: 30, delivery_fee: 3.50, items: [i61, i62, i63, i64, i65], reviews: [rev9])
+r10 = Restaurant.create( image_url:'/wendy.svg.png',name: 'Wendys', distance: 15, delivery_fee: 8.50, items: [i28, i29, i30, i31, i32], reviews: [rev10])
+
+

@@ -12,7 +12,8 @@ class RestaurantsController < ApplicationController
     #     [:items => {:only => [:id, :name, :price, :restaurant_id]}]
         restaurants = Restaurant.all
         return render json: restaurants, include: 
-             [:items => {:only => [:id, :name, :price, :restaurant_id]}], status: 200
+             [:items => {:only => [:id, :name, :price, :restaurant_id]}], status: 200 
+            #  :reviews => {:only => [:review]}], status: 200
     end
    
     # def items_index

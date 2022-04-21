@@ -6,6 +6,7 @@ import NavBar from './NavBar';
 import BecomeASavior from './BecomeASavior';
 import RestaurantPage from './RestaurantPage'
 import RestaurantDetails from './RestaurantDetails';
+import Cart from './Cart';
 
 
 // import LoginForm from './LoginForm';
@@ -44,6 +45,9 @@ function App() {
       </Route>
       <Route path="/restaurantdetails/:restaurant_id">
         <RestaurantDetails />
+      </Route>
+      <Route path="/cart">
+        <Cart />
       </Route>
       <Route path="/">
         <Home />
