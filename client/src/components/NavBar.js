@@ -19,9 +19,9 @@ function NavBar({ setUser, user }) {
     return(
     <div>
         <div>
-        <p>username: {user.username}   ~
-           <button className="logout" onClick={handleLogoutClick}>Logout</button>
+        <p>user: {user.username}   ~
         </p>   
+        {/* <button className="logout" onClick={handleLogoutClick}>Logout</button> */}
         </div>
        <nav className="navbar">
            <p className="navul">
@@ -32,6 +32,8 @@ function NavBar({ setUser, user }) {
            <Link to="/restaurants" className="navli">Restaurants</Link>
            <Link to="/become-a-savior" className="navli">Become a Savior</Link> 
            <Link to="/cart" className="cart"><BsFillCartCheckFill size="20px" /></Link>
+           <button className="logout" onClick={handleLogoutClick}>Logout</button>
+
 
            </p>
            </nav>

@@ -204,6 +204,30 @@ img {
     margin-left: 40%;
 }
 
+.driverimg2 {
+    margin-left: 900px;
+    height: 200px;
+    width: 200px;
+    margin-top: -180px;
+    position:absolute;
+}
+.driverimg3 {
+    margin-left: 1100px;
+    height: 200px;
+    width: 200px;
+    margin-top: -180px;
+    position:absolute;
+
+}
+.driverimg4 {
+    margin-left: 1300px;
+    height: 200px;
+    width: 200px;
+    margin-top: -180px;
+    position:absolute;
+
+}
+
 .home_secondthird {
     background-color: rgb(208, 208, 252);
     text-align: center;
@@ -285,16 +309,23 @@ img {
   .card:hover {
     box-shadow: 0 8px 16px 0 rgba(218, 31, 31, 0.685);
   }
+ 
   
   .reviewcard {
-    border: solid;
-    height: 150px;
+    border: gray;
+    height: 240px;
     font-size: 20px;
     margin-top: 50px;
     margin-right: 330px;
+    background-color: rgb(226, 226, 248);
   }
   .reviewcontainer {
+   
       background-color: rgb(213, 213, 248);
+  }
+  .reviewcard button {
+      float: right;
+      margin-right: 20px;
   }
   .itemcard {
       margin-left: 30px;

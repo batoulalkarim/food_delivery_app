@@ -61,10 +61,12 @@ function Review(){
     revs.map((rev) => {
         return(
             <div>
-                <h6>{rev.restaurant.title}</h6>
             <div className="reviewcard" key={rev.id} revs={revs}>
+            {/* <h6 className="ctext">Review for {rev.restaurant.title} Restaurant:</h6> */}
                 <p>
-                {rev.username} : {rev.review}<br />
+                    <br />
+                Review for {rev.restaurant.title} Restaurant: <br /><br />
+                {rev.username} : <br />{rev.review}<br />
                 Date Visited: {rev.dateposted}<br />
                 Rating: {rev.rating}
                 </p>

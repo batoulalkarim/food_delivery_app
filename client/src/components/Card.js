@@ -14,6 +14,8 @@ function ResCard({restaurant}){
             </div>
             <div className="content">
                 <div className="header">
+                    <br />
+                    <br />
                 <Link to={`/restaurantdetails/${restaurant.id}`}>Order Now</Link>
                 <h4>{restaurant.title}</h4>
                 <h5>{restaurant.distance} minutes away </h5>

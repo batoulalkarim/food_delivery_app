@@ -1,6 +1,6 @@
 class ReviewsController < ApplicationController
 
-    skip_before_action :authorized, only: [:index, :show, :create, :increment_likes, :destroy]
+    skip_before_action :authorized, only: [:index, :show, :create, :increment_likes, :delete]
 
     def index 
         reviews = Review.all
@@ -13,7 +13,7 @@ class ReviewsController < ApplicationController
         render json: review, status: :created
     end
 
-    def destroy
+    def delete
         if params[:restaurant_id]
         review = Review.find_by(id: params[:restaurant_id])
         if review
