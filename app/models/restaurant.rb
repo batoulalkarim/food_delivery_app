@@ -1,9 +1,10 @@
 class Restaurant < ApplicationRecord
-    has_many :orders 
-    has_many :items 
-    has_many :users, through: :orders 
     has_many :reviews
+    has_many :orders 
+    has_many :items
+    has_many :users, through: :orders 
     
-    accepts_nested_attributes_for :items
-    accepts_nested_attributes_for :reviews
+    
+    accepts_nested_attributes_for :reviews, :items
+    
 end

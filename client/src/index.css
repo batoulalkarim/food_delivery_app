@@ -31,8 +31,8 @@ html, body{
     text-align: right;
     margin-right: 20px;
     width: 100%;
-    margin-bottom: -20px;
-    margin-top: -20px;
+    margin-bottom: 20px;
+    margin-top: -55px;
 } 
 .navli  {
     display: inline-block;
@@ -55,16 +55,43 @@ html, body{
 } */
 
 /* .home_left {
-    position: absolute;
-    margin-left: 90%;
-    display: flex;
+    margin-right: 32%;
+    margin-top: -35px;
 } */
 
 .cart {
     display: inline-block;
-    background-color: white;
     position: relative;
     margin: 10px;
+    font-size: 25px;
+}
+.cartcontainer {
+    background-color: rgb(151, 192, 238);
+    position: relative;
+    height: 2000px;
+    margin: 10px;
+    
+}
+.cartitem {
+    /* border: solid; */
+    background-color: rgb(207, 229, 250);
+    margin: 5px;
+}
+
+.shift {
+    margin-right: 800px;
+}
+
+.bttn {
+    margin-bottom: 10px;
+    border: none;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 3px 5px 0 rgba(0,0,0,0.19);
+    opacity: 0.6;
+}
+.bttn:hover {opacity: 1}
+.left{
+    border:solid;
+    
 }
 
 img {
@@ -78,8 +105,9 @@ img {
     float: right;
 }
 .restaurantpageContainer {
-    background-color: rgb(173, 210, 235);
+    background-color: rgb(149, 212, 236);
     padding: 30px;
+    height: 400px;
 }
 
 .logintitlefs {
@@ -110,9 +138,11 @@ img {
     margin-left: 370px;
 }
 .title {
+    font-size: 80px;
     margin-top: -30px;
     margin-left: 20px;
     padding-bottom: 60px;
+    font-family:Arial, Helvetica, sans-serif;
 }
 .resheader {
     margin-left: 20px;
@@ -173,6 +203,30 @@ img {
 .driversimgs {
     display: flex;
     margin-left: 40%;
+}
+
+.driverimg2 {
+    margin-left: 900px;
+    height: 200px;
+    width: 200px;
+    margin-top: -180px;
+    position:absolute;
+}
+.driverimg3 {
+    margin-left: 1100px;
+    height: 200px;
+    width: 200px;
+    margin-top: -180px;
+    position:absolute;
+
+}
+.driverimg4 {
+    margin-left: 1300px;
+    height: 200px;
+    width: 200px;
+    margin-top: -180px;
+    position:absolute;
+
 }
 
 .home_secondthird {
@@ -256,7 +310,9 @@ img {
   .card:hover {
     box-shadow: 0 8px 16px 0 rgba(218, 31, 31, 0.685);
   }
+ 
   
+<<<<<<< HEAD
   /* #poke-container {
     display: flex;
     justify-content: center;
@@ -277,4 +333,44 @@ img {
 
      
  
+=======
+  .reviewcard {
+    border: gray;
+    height: 240px;
+    font-size: 20px;
+    margin-top: 50px;
+    margin-right: 330px;
+    background-color: rgb(226, 226, 248);
+  }
+  .reviewcontainer {
+   
+      background-color: rgb(213, 213, 248);
+  }
+  .reviewcard button {
+      float: right;
+      margin-right: 20px;
+  }
+  .itemcard {
+      margin-left: 30px;
+      border: solid;
+      margin-top: 3px;
+      margin-right: 50%;
+  }
+  .menu {
+      background-color:rgb(223, 223, 245);
+      padding: 40px;
+  }
+  .button {
+      background-color: white;
+      font-weight: bold;
+      font-family:Verdana, Geneva, Tahoma, sans-serif;
+  }
+  .logos {
+      margin-top: -190px;
+      float: right;
+  }
+  .title {
+      margin-bottom: -10px;
+      font-size: 40px;
+>>>>>>> 78f555d200b085e7dfc5b4c27fed2f33bd3ab438
   }

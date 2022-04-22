@@ -14,11 +14,14 @@ function ResCard({restaurant}){
             </div>
             <div className="content">
                 <div className="header">
-                <h4>name here{restaurant.name}</h4>
+                    <br />
+                    <br />
+                <Link to={`/restaurantdetails/${restaurant.id}`}>Order Now</Link>
+                <h4>{restaurant.title}</h4>
                 <h5>{restaurant.distance} minutes away </h5>
                 <h6>${restaurant.delivery_fee}</h6>
+                <Link to={`/restaurantreviews/${restaurant.id}`}>Read Reviews</Link>
                 </div>
-                <Link to={`/restaurantdetails/${restaurant.id}`}>Order Now</Link>
                 </div>
             </div>
            

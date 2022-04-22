@@ -2,7 +2,7 @@ import { useState } from 'react';
 import LoginForm from './LoginForm';
 import SignUp from './SignUp';
 
-function Login({ setCurrentUser }){
+function Login({ setUser }){
     const [showLogin, setShowLogin] = useState(true);
 
 
@@ -11,7 +11,7 @@ function Login({ setCurrentUser }){
             <h1 className="logintitlefs">Flavor Savior</h1>
             {showLogin ? (
                 <>
-                <LoginForm setCurrentUser={setCurrentUser}/>
+                <LoginForm setUser ={setUser}/>
                 <br />
                 <p className="logintoggle">
                     Don't have an account? &nbsp;
@@ -22,7 +22,7 @@ function Login({ setCurrentUser }){
                 </>
             ) : (
                 <>
-                <SignUp setCurrentUser={setCurrentUser}/>
+                <SignUp setUser={setUser}/>
                 <br />
                 <p className="logintoggle">
                     Already have an account? &nbsp;
