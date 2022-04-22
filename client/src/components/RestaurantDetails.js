@@ -1,11 +1,11 @@
 import React, {useEffect, useState} from 'react';
 import {useParams} from 'react-router-dom'
-import {Link} from 'react-router-dom';
+import ItemCard from './ItemCard';
 
 
 
 
-function RestaurantDetails(){
+function RestaurantDetails({onAddToCart,}){
     let {restaurant_id} = useParams()
     console.log(restaurant_id)
     const [restrs, setRestrs] = useState(null)
@@ -23,19 +23,18 @@ function RestaurantDetails(){
     const display = restrs ? 
     restrs.items.map((item) => {
           return(
-        <div className="itemcard" key={item.name} restrs={restrs}>
-        <h3>item name:{item.name}</h3>
-        <h4>$ {item.price}</h4>
-        <h4>item id: {item.id}</h4>
-        <Link to="/cart">Add to cart</Link>
-    </div>
+              <div>
+                  
+              <ItemCard key={item.id} item={item} onItemClicked={onAddToCart} restrs={restrs}/>
+              </div>
     )
     }) : null 
     
         return(
-        <div>
-             <h1>Menu</h1>
+        <div className = 'menu'>
+             <h1> Menu</h1>
              {display}
+             
         </div>
     )
 };

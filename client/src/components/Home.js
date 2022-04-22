@@ -1,19 +1,17 @@
-import React from 'react';
-import SearchBar from './SearchBar';
-
+import React, { useReducer } from 'react';
 import{ Link }from 'react-router-dom';
 // import BecomeASavior from './BecomeASavior';
 
-function Home() {
-
+function Home({user}) {
+   
     return(
         <div className="home_wrapper">
             <div className ="home_firstthird">
                <div className="home_firstthird_text">
                 <h1>Flavor Savior</h1>
-                <br />
-                <h3>Find a Restaurant</h3>
-                <SearchBar />
+                <h1>Hi {user.username}!</h1>
+                <h3>We're here to help you find food that makes you want to slap your mama<br /><br />explore new restaurants and nearby grocery stores, or learn about becoming a Savior. It's all here baby.</h3>
+                <Link to='/restaurants'>Start Exploring</Link>
                 </div>
             </div>
             <div className="home_becomea_savior">

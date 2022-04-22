@@ -1,15 +1,15 @@
 import React from 'react';
-import {Link} from 'react-router-dom';
 
-function ItemCard({restrs, restaurant, item}){
+
+function ItemCard({onItemClicked, item, restrs}){
     
     return(
-        <div className="itemcard_container" key={restaurant.item.id} >
-            <div className="itemcard" key={item.name} restrs={restrs}>
-            <h3>item name:{item.name}</h3>
-            <h4>$ {item.price}</h4>
-            <h4>item id: {item.id}</h4>
-            <Link to="/cart">Add to cart</Link>
+      <div>
+
+        <div className="itemcard" key={item.name} restrs={restrs}>
+          <h3>{item.name} : ${item.price}</h3>
+          <h3>{item.description}</h3>
+          <button className="button" onClick={() => onItemClicked(item)}>Add to cart</button>
         </div>
         </div>
     )

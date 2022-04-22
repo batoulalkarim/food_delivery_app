@@ -3,7 +3,7 @@ class ItemsController < ApplicationController
     #     return render json: Item.where(restaurant_id:[params[:restaurant_id]]), status: 200
     # end
 
-    skip_before_action :authorized, only: [:index, :show]
+    skip_before_action :authorized, only: [:index, :show, :destroy]
     
     def index 
         if params[:restaurant_id]
@@ -23,4 +23,14 @@ class ItemsController < ApplicationController
             return render json:{ error: "Not Found"}, status: :not_found
         end 
     end 
+
+    def destroy 
+        item = Item.find_by(id: params[:id])
+        if item
+            item.destroy
+            head :no_content
+        else 
+            render json: { error: "item not found"}, status: :not_found
+        end
+    end
 end

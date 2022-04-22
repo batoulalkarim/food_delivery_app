@@ -1,16 +1,16 @@
 import React, { useState } from 'react';
 // import { useNavigate } from 'react-router-dom';
 
-function LoginForm({setCurrentUser}){
+function LoginForm({setUser}){
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
     const [login, setLogin] = useState('');
     const [errors, setErrors] = useState([])
     const [isLoading, setIsLoading] = useState(false);
 
-    // const navigate = useNavigate();
+   
 
-    function onSubmit(e) {
+    function handleSubmit(e) {
         e.preventDefault()
         setIsLoading(true)
         const user = {
@@ -19,28 +19,30 @@ function LoginForm({setCurrentUser}){
             // name,
             // email
         }
-        fetch(`http://localhost:3000/login`, {
+        fetch("/login", {
             method: "POST",
-            headers: {'Content-Type' : 'application/json'},
+            headers: {'Content-Type' : 'application/json',
+        },
             body: JSON.stringify(user)
         })
         .then(res => {
             setIsLoading(false);
             if(res.ok) {
-                console.log(setCurrentUser)
-                res.json().then(setCurrentUser)
+                console.log(setUser)
+                res.json().then(setUser)
                 // navigate('/')
             } else {
                 res.json().then(e => setErrors(Object.entries(e.error).flat()))
             }
         })
     }
+        
 
     return(
         <div>
             <h1 className="logintitle">Welcome Back</h1>
             {/* <h2>{typeof(setCurrentUser)}</h2> */}
-        <form onSubmit={onSubmit} className="loginform">
+        <form onSubmit={handleSubmit} className="loginform">
         <label>
         Username
         <br />

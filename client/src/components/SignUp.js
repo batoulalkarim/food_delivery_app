@@ -1,12 +1,13 @@
-import React, { useState } from 'react';
+import React, { useState} from 'react';
 
-function SignUp({setCurrentUser}) {
+export default function SignUp({setUser}) {
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
     
     const [errors, setErrors] = useState([])
+
 
     function onSubmit(e) {
         e.preventDefault()
@@ -16,14 +17,14 @@ function SignUp({setCurrentUser}) {
             name,
             email
         }
-        fetch(`/users`, {
+        fetch('/users', {
             method: "POST",
             headers: {'Content-Type' : 'application/json'},
             body: JSON.stringify(user)
         })
         .then(res => {
             if(res.ok) {
-                res.json().then(setCurrentUser)
+                res.json().then(setUser)
             } else {
                 res.json().then(e => setErrors(Object.entries(e.error).flat()))
             }
@@ -31,6 +32,7 @@ function SignUp({setCurrentUser}) {
     }
     return(
         <form onSubmit={onSubmit} className="signupform">
+            <h1>We're Happy You're Here</h1>
             <label>
                Full Name: 
                 <br />
@@ -64,7 +66,4 @@ function SignUp({setCurrentUser}) {
             <input type="submit" value="Sign up" />
             {/* <input type="submit" value="Login" onClick={() => setLogin(true)} /> */}
             </form>
-    )
-}
-
-export default SignUp;
+    )}

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_04_21_214950) do
+ActiveRecord::Schema.define(version: 2022_04_22_062440) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -18,6 +18,7 @@ ActiveRecord::Schema.define(version: 2022_04_21_214950) do
   create_table "items", force: :cascade do |t|
     t.string "name"
     t.float "price"
+    t.string "description"
     t.bigint "restaurant_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -43,10 +44,10 @@ ActiveRecord::Schema.define(version: 2022_04_21_214950) do
   end
 
   create_table "restaurants", force: :cascade do |t|
+    t.string "title"
     t.string "image_url"
     t.integer "distance"
     t.float "delivery_fee"
-    t.string "name"
     t.bigint "items_id"
     t.bigint "reviews_id"
     t.datetime "created_at", precision: 6, null: false
@@ -57,9 +58,13 @@ ActiveRecord::Schema.define(version: 2022_04_21_214950) do
 
   create_table "reviews", force: :cascade do |t|
     t.string "review"
+    t.string "username"
+    t.string "dateposted"
+    t.integer "rating"
     t.bigint "restaurant_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "likes", default: 0, null: false
     t.index ["restaurant_id"], name: "index_reviews_on_restaurant_id"
   end
 
