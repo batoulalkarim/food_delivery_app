@@ -8,7 +8,13 @@ function Home({user}) {
         <div className="home_wrapper">
             <div className ="home_firstthird">
                <div className="home_firstthird_text">
-                <h1>Flavor Savior</h1>
+                   <div >
+                       <p className="title">
+                <span >Flavor Savior</span>
+                
+                </p>
+
+                    </div>
                 <h1>Hi {user.username}!</h1>
                 <h3>We're here to help you find food that makes you want to slap your mama<br /><br />explore new restaurants and nearby grocery stores, or learn about becoming a Savior. It's all here baby.</h3>
                 <Link to='/restaurants'>Start Exploring</Link>

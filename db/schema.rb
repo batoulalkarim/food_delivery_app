@@ -18,30 +18,36 @@ ActiveRecord::Schema.define(version: 2022_04_22_062440) do
   create_table "items", force: :cascade do |t|
     t.string "name"
     t.float "price"
-    t.integer "restaurant_id"
+    t.string "description"
+    t.bigint "restaurant_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["restaurant_id"], name: "index_items_on_restaurant_id"
   end
 
   create_table "order_items", force: :cascade do |t|
-    t.integer "order_id"
-    t.integer "item_id"
+    t.bigint "order_id"
+    t.bigint "item_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["item_id"], name: "index_order_items_on_item_id"
+    t.index ["order_id"], name: "index_order_items_on_order_id"
   end
 
   create_table "orders", force: :cascade do |t|
-    t.integer "restaurant_id"
-    t.integer "user_id"
+    t.bigint "restaurant_id"
+    t.bigint "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["restaurant_id"], name: "index_orders_on_restaurant_id"
+    t.index ["user_id"], name: "index_orders_on_user_id"
   end
 
   create_table "restaurants", force: :cascade do |t|
+    t.string "title"
     t.string "image_url"
     t.integer "distance"
     t.float "delivery_fee"
-    t.string "name"
     t.bigint "items_id"
     t.bigint "reviews_id"
     t.datetime "created_at", precision: 6, null: false
@@ -52,6 +58,9 @@ ActiveRecord::Schema.define(version: 2022_04_22_062440) do
 
   create_table "reviews", force: :cascade do |t|
     t.string "review"
+    t.string "username"
+    t.string "dateposted"
+    t.integer "rating"
     t.bigint "restaurant_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -64,9 +73,10 @@ ActiveRecord::Schema.define(version: 2022_04_22_062440) do
     t.string "email"
     t.string "username"
     t.string "password_digest"
-    t.integer "order_id"
+    t.bigint "order_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["order_id"], name: "index_users_on_order_id"
   end
 
 end
