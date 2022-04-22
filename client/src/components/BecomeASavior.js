@@ -2,9 +2,9 @@ import React from 'react';
 
 function BecomeASavior(){
     return(
-        <div>
+        <div className="flex-container">
             <h3>Flavor Savior</h3>
-            <img src='' alt='deliveryimg' />
+            <img className="logoimage"src='/savior.png' alt='deliveryimg' />
                 <h3>Your time. Your goals. You're the boss.</h3>
                 <h3>Drive, deliver, and earn with FlavorSavior.</h3>
                 <p>
@@ -26,8 +26,9 @@ function BecomeASavior(){
                  It's that simple.
              </p>
              <br />
+             <div className="flex-container">
              <h2>Why deliver with FlavorSavior</h2>
-             {/* insert image here of a wallet with cash */}
+             <img src="/racks.png" alt="" />
              <p>
                  <strong>Earn extra money for your goals</strong>
                  Achieve your short-term goals or long-term dreams by driving or <br />
@@ -35,28 +36,28 @@ function BecomeASavior(){
             </p>
             <p>
                  <br />
-                 {/* insert image of mini calendar here */}
+                 <img src="/calendar.jpg" alt=""/>
                  <strong>Choose your own hours</strong><br />
                  Unlike full-time jobs or seasonal gigs, when and where you work is <br />
                  totally up to you. 
              </p>
              <br />
             <p>
-                {/* insert mini image of map here */}
-                <strong>Freedom to dash anywhere</strong>
+                <img src="/map.jpg" alt="oop" />
+                <strong>Freedom to be a Savior anywhere</strong>
                 <br />
                 Deliver near your home or in a city you're just visiting.
             </p>
             <p>
-                {/* insert image of todo list checked off here */}
+                <img src="/todo.jpg" alt="" />
                 <strong>Easy to get started</strong> <br />
                 Don't worry about your car inspections or vehicle restrictions. Just sign up <br />
                 and receive everything you need to start earning.
             </p>
             <p>
-                {/* insert image of word now */}
+                <img src="/now.png" alt="" />
                 <strong>Receive deliveries right away</strong>
-                Once approved, log on to the Dasher app to receive nearby orders <br />
+                Once approved, log on to the Flavor Savior app to receive nearby orders <br />
                 immediately.
             </p>
             <p>
@@ -82,7 +83,7 @@ function BecomeASavior(){
                     <li>Complete sign up</li>
                     <li>Get the app and go</li>
                 </ul>
-            
+            </div>
         </div>
     )
 }

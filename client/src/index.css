@@ -162,6 +162,7 @@ img {
     position: relative;
     padding-left: 90px;
     padding-bottom: 50px;
+    margin:auto
 }
 
 .hometext {
@@ -261,3 +262,19 @@ img {
     justify-content: center;
     flex-wrap: wrap;
   } */
+
+  .flex-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      
+  }
+  .logoimage {
+      position: relative;
+      margin:auto;
+     
+
+     
+ 
+  }
