@@ -27,10 +27,8 @@ function NavBar({ setUser, user }) {
            <p className="navul">
             
            <Link to="/home" className="navli">Home</Link>
-           {/* past orders needs to only exist for current users */}
-           <Link to="/past-orders" className="navli">Past Orders</Link>
-           <Link to="/restaurants" className="navli">Restaurants</Link>
            <Link to="/become-a-savior" className="navli">Become a Savior</Link> 
+           <Link to="/contact" className="navli">Contact Us</Link>
            <Link to="/cart" className="cart"><BsFillCartCheckFill size="20px" /></Link>
            <button className="logout" onClick={handleLogoutClick}>Logout</button>
 

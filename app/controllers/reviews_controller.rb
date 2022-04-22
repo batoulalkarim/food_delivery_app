@@ -1,6 +1,6 @@
 class ReviewsController < ApplicationController
 
-    skip_before_action :authorized, only: [:index, :show, :create, :increment_likes, :delete]
+    skip_before_action :authorized, only: [:index, :show, :create, :increment_likes, :destroy]
 
     def index 
         reviews = Review.all
@@ -13,16 +13,25 @@ class ReviewsController < ApplicationController
         render json: review, status: :created
     end
 
-    def delete
-        if params[:restaurant_id]
-        review = Review.find_by(id: params[:restaurant_id])
-        if review
-            review.destroy
-            head :no_content
-        else
-            render json: { error: "Review not found"}, status: :not_found
-        end
-    end
+    # def delete
+    #     if params[:restaurant_id]
+    #     review = Review.where(id: [:restaurant_id])
+    #     if review
+    #         review.destroy
+    #         head :no_content
+    #     else
+    #         render json: { error: "Review not found"}, status: :not_found
+    #     end
+    # end
+    # end
+    def destroy 
+        # review = Review.find_by!(id: params[:id])
+        # if params[:restaurant_id]
+        puts params[:restaurant_id]
+        review = Review.find_by!(restaurant_id: params[:restaurant_id])
+        review.destroy
+        head :no_content
+        review.to_json
     end
 
     def increment_likes
@@ -31,10 +40,7 @@ class ReviewsController < ApplicationController
         render json review
     end
 
-    # def show 
-    #     review = Review.find_by(id: params[:id])
-    #     render json: review
-    # end
+  
 
     def show 
         if params[:restaurant_id]
@@ -45,11 +51,7 @@ class ReviewsController < ApplicationController
         end
         render json: reviews, include: :restaurant
     end
-    # def show 
-    #     restaurant = Restaurant.find_by(params[:restaurant_id])
-    #     review = restaurant.reviews
-    #     render json: review
-    # end
+  
 
     private 
     

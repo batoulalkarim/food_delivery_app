@@ -312,7 +312,7 @@ img {
   }
  
   
-<<<<<<< HEAD
+
   /* #poke-container {
     display: flex;
     justify-content: center;
@@ -331,9 +331,9 @@ img {
       margin:auto;
      
 
-     
+  }
  
-=======
+
   .reviewcard {
     border: gray;
     height: 240px;
@@ -372,5 +372,5 @@ img {
   .title {
       margin-bottom: -10px;
       font-size: 40px;
->>>>>>> 78f555d200b085e7dfc5b4c27fed2f33bd3ab438
+
   }

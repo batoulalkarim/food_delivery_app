@@ -5,7 +5,7 @@ import {useParams, useHistory } from 'react-router-dom';
 
 function Review(){
     let {restaurant_id} = useParams()
-    let {review_id} = useParams()
+    
 
 
     const history = useHistory()
@@ -33,7 +33,7 @@ function Review(){
         const likecount = {
             likes
         }
-           fetch(`http://localhost:3000/restaurants/${restaurant_id}/reviews/`, {
+           fetch(`http://localhost:3000/restaurants/${restaurant_id}/reviews/${restaurant_id}`, {
                method: "POST",
                headers: {'Content-Type' : 'application/json',
             },
@@ -50,11 +50,16 @@ function Review(){
     }
 
     function handleDelete(){
-        fetch(`http://localhost:3000/restaurants/${restaurant_id}/reviews/${restaurant_id}`, {
+        fetch(`${restaurant_id}/reviews/${restaurant_id}`, {
             method: "DELETE",
+        }).then(() => {
+            setRevs(revs.filter(e => {
+                console.log(setRevs)
+                return(e.id !== review.id)
+            }))
         })
-        .then(r => r.json())
-        .then(data => console.log(data))
+        // .then(r => r.json())
+        // .then(data => console.log(data))
     }
 
     const display = revs ?

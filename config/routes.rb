@@ -28,7 +28,7 @@ Rails.application.routes.draw do
   # post "/login", to: "sessions#show"
   post "/users", to: "users#create"
   delete "items/:id", to: "items#delete"
-  delete "/restaurants/:restaurant_id/reviews/:restaurant_id", to: "reviews#delete"
+  delete "restaurantreviews/:restaurant_id/reviews/:restaurant_id", to: "reviews#destroy"
   get "/me", to: "users#show"
   post "/restaurants/:restaurant_id/reviews", to: "reviews#create"
   

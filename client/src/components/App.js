@@ -8,6 +8,7 @@ import RestaurantPage from './RestaurantPage'
 import RestaurantDetails from './RestaurantDetails';
 import Cart from './Cart';
 import Review from './Review';
+import Contact from './Contact';
 
 
 // import LoginForm from './LoginForm';
@@ -79,6 +80,9 @@ function App() {
       </Route>
       <Route path="/cart">
         <Cart cartList={cartList} onItemRemove={handleRemovefromCart} user={user}/>
+      </Route>
+      <Route path="/contact">
+        <Contact />
       </Route>
       <Route path="/restaurantreviews/:restaurant_id">
         <Review />
